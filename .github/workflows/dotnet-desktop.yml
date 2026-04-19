@@ -34,13 +34,13 @@ jobs:
       uses: microsoft/setup-msbuild@v2
     
     - name: Build & Install
-      run: dotnet build
+      run: dotnet build ./$Solution_Name/
       
     - name: Ensure browsers are installed
       run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
       
     - name: Run your tests
-      run: dotnet test
+      run: dotnet test ./$Solution_Name/
 # 
 #    # Restore the application to populate the obj folder with RuntimeIdentifiers
 #    - name: Restore the application
