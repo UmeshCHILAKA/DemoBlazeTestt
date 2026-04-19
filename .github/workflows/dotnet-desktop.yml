@@ -37,10 +37,10 @@ jobs:
       run: dotnet build --configuration ${{ matrix.configuration }} ./$Solution_Name/
       
     - name: Ensure browsers are installed
-      run: pwsh ./${{ Solution_Name/bin/${{ matrix.configuration }}/net10.0/playwright.ps1 install --with-deps
+      run: pwsh ./${Solution_Name}/bin/${{ matrix.configuration }}/net10.0/playwright.ps1 install --with-deps
       
     - name: Run your tests
-      run: dotnet test ./${{ Solution_Name }}/
+      run: dotnet test ./${Solution_Name}/
 # 
 #    # Restore the application to populate the obj folder with RuntimeIdentifiers
 #    - name: Restore the application
